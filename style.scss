@@ -1,0 +1,14 @@
+.element-class-name {
+  position: relative;
+  transition: all .75s ease-in-out;
+  overflow: hidden;
+  height: 0;
+  
+  &.toggle-element--hidden {
+    display: none;
+  }
+  
+  &.toggle-element--active {
+    display: block;
+  }
+}
