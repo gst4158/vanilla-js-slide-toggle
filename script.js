@@ -45,7 +45,7 @@ function toggleElm(element, elementTrigger) {
       ) * 1000
     );
     
-    const containerH = `${getElementHeight}px`;
+    const containerH = `${getElementHeight(element)}px`;
     
     // Clear timeout
     window.clearTimeout(toggleElementTimeout);
