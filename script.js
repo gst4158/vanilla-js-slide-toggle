@@ -30,7 +30,7 @@ function getElementHeight(element) {
  * @param {Object} elementTrigger Trigger which started toggle action. ADA is updated as part of process
  */
 function toggleElm(element, elementTrigger) {
-  if (element, elementTrigger) {
+  if (element) {
     const nameSpace = 'toggle-element';
     const activeClass = `${nameSpace}--active`;
     const hiddenClass = `${nameSpace}--hidden`;
@@ -54,7 +54,7 @@ function toggleElm(element, elementTrigger) {
     if (element.classList.contains(hiddenClass)) {
       element.classList.remove(hiddenClass);
       element.classList.add(activeClass);
-      elementTrigger.setAttribute('aria-expand', 'true');
+      if (elementTrigger) elementTrigger.setAttribute('aria-expand', 'true');
       
       setTimeout(() => {
         element.style.height = containerH;
@@ -68,7 +68,7 @@ function toggleElm(element, elementTrigger) {
     else {
       element.style.height = containerH;
       element.classList.remove(activeClass);
-      elementTrigger.setAttribute('aria-expand', 'false');
+      if (elementTrigger) elementTrigger.setAttribute('aria-expand', 'false');
       
       setTimeout(() => {
         element.style.height = '0px;
